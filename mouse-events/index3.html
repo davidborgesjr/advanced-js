@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing multiple clicks</title>
+    <style>
+        .selected{
+            background: #0f0;
+        }
+        li {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    Please, select one or more items from the list below:
+    <br>
+    <ul id="ul">
+        <li>Javascript development</li>
+        <li>Web applications architecture</li>
+        <li>Database</li>
+        <li>Web development</li>
+        <li>Back-end development</li>
+    </ul>
+    <script>
+        let ulElement = document.getElementById("ul");
+        ulElement.addEventListener('click', selectItems)
+
+        function selectItems(event){
+            if(event.target.tagName != 'LI') return;
+            if(event.ctrlKey || event.metaKey){
+                multipleSelect(event.target)
+            }else{
+                singleSelect(event.target)
+            }
+        }
+
+        function singleSelect(li){
+            let selectedItems = ulElement.querySelectorAll('.selected')
+            for(let selected of selectedItems){
+                selected.classList.remove('selected');
+            }
+            li.classList.add('selected')
+        }
+
+        function multipleSelect(li){
+            li.classList.toggle('selected')
+        }
+
+    </script>
+</body>
+</html>

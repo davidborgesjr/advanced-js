@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UIEvent Resize</title>
+</head>
+<body>
+  <p>Testing screen resizing</p>
+  <p>Resizing counter: <span id="counter"></span> </p>
+  <script>
+    let counter = 0;
+
+    function setCounterNumber(){
+      document.getElementById("counter").innerHTML = counter.toString()
+    }
+
+    window.addEventListener('load', setCounterNumber)
+
+    window.addEventListener('resize', () => {
+      counter++
+      setCounterNumber()
+    })
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MouseEvent</title>
+</head>
+<body>
+    <p>MouseDown & MouseUp </p>
+    <p id="clickableElement">Click here</p>
+</body>
+    <script>
+        let pElement = document.getElementById('clickableElement');
+
+        pElement.addEventListener('mousedown', (event) => {
+            event.target.innerHTML = "Mouse is being clicked";
+        }, false);
+
+        pElement.addEventListener('mouseup', (event) => {
+            event.target.innerHTML = "Mouse is not being clicked";
+        }, false)
+    </script>
+</html>

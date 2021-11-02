@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UIEvent Interface </title>
+</head>
+<body onload="checkIfCookiesAreEnabled()">
+    <script>
+        function checkIfCookiesAreEnabled(){
+            if(navigator.cookieEnabled){
+                alert("Cookies are enabled")
+            }else{
+                alert("Cookies are not enabled")
+            }
+        }
+    </script>
+    <p>Testing onload from </p>
+</body>
+</html>
